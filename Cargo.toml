@@ -1,0 +1,48 @@
+[package]
+name = "temperature-sensor"
+version = "0.1.0"
+authors = ["Zino Holwerda <z.holwerda@gmail.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[[bin]]
+name = "temperature-sensor"
+test = false
+bench = false
+
+[dependencies]
+panic-halt = "0.2.0"
+ufmt = "0.1.0"
+nb = "0.1.2"
+embedded-hal = "0.2.3"
+dht11 = "0.3.1"
+
+[dependencies.arduino-hal]
+git = "https://github.com/rahix/avr-hal"
+rev = "4170a773d4d76cc93433d2455ed8b14e573ebe70"
+features = ["arduino-uno"]
+
+[dependencies.avr-device]
+version = "0.4.0"
+features = ["atmega328p"]
+
+[dependencies.either]
+version = "1.6.1"
+default-features = false
+
+[dependencies.void]
+version = "*"
+default-features = false
+
+# Configure the build for minimal size - AVRs have very little program memory
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"
