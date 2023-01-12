@@ -8,7 +8,7 @@ version = "0.1.0"
 source = "git+https://github.com/rahix/avr-hal?rev=4170a773d4d76cc93433d2455ed8b14e573ebe70#4170a773d4d76cc93433d2455ed8b14e573ebe70"
 dependencies = [
  "atmega-hal",
- "avr-device 0.4.0",
+ "avr-device",
  "avr-hal-generic",
  "cfg-if 1.0.0",
  "embedded-hal",
@@ -21,7 +21,7 @@ name = "atmega-hal"
 version = "0.1.0"
 source = "git+https://github.com/rahix/avr-hal?rev=4170a773d4d76cc93433d2455ed8b14e573ebe70#4170a773d4d76cc93433d2455ed8b14e573ebe70"
 dependencies = [
- "avr-device 0.4.0",
+ "avr-device",
  "avr-hal-generic",
 ]
 
@@ -34,17 +34,6 @@ dependencies = [
  "avr-device-macros",
  "bare-metal",
  "cfg-if 0.1.10",
- "vcell",
-]
-
-[[package]]
-name = "avr-device"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "deb45711b7227cb3f799c40c4e0e8beea1765acff8d06a14bb3479c1a549d8b0"
-dependencies = [
- "bare-metal",
- "cfg-if 1.0.0",
  "vcell",
 ]
 
@@ -64,7 +53,7 @@ name = "avr-hal-generic"
 version = "0.1.0"
 source = "git+https://github.com/rahix/avr-hal?rev=4170a773d4d76cc93433d2455ed8b14e573ebe70#4170a773d4d76cc93433d2455ed8b14e573ebe70"
 dependencies = [
- "avr-device 0.4.0",
+ "avr-device",
  "cfg-if 0.1.10",
  "embedded-hal",
  "nb 0.1.3",
@@ -190,7 +179,7 @@ name = "temperature-sensor"
 version = "0.1.0"
 dependencies = [
  "arduino-hal",
- "avr-device 0.5.0",
+ "avr-device",
  "dht11",
  "either",
  "embedded-hal",
