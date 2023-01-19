@@ -282,10 +282,10 @@ impl SevenSeg
                     self.seg_g(true)
                 }
                 7 => {
-                    self.seg_a(false);
+                    self.seg_a(true);
                     self.seg_b(false);
                     self.seg_c(false);
-                    self.seg_d(true);
+                    self.seg_d(false);
                     self.seg_e(true);
                     self.seg_f(true);
                     self.seg_g(false)
